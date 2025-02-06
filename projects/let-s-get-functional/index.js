@@ -16,10 +16,19 @@ var _ = require('underbar');
  *
  * 4. To test your work, run the following command in your terminal:
  *
- *    npm start --prefix ./let-s-get-functional.github.io/projects/let-s-get-functional
+ *    npm start --prefix ./let-s-get-functional.gith-ub.io-2/projects/let-s-get-functional
  *
  *    IMPORTANT: Make sure you replace <YOUR_GITHUB_FOLDER with your actual github folder name that is in your workspace.
  */
+
+// _.map, _.filter, _.reduce, _.each
+
+/*
+I: function takes in array
+O: function returns the number of male customers
+C:
+E:
+*/
 
 var maleCount = function(array) {
 
