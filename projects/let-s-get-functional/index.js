@@ -31,10 +31,30 @@ E:
 */
 
 var maleCount = function(array) {
-
+// use filter on the array with callback function on customer
+var males = _.filter(array, function(customer){
+ // check to see if customer gender equals male   
+ return customer.gender === 'male';
+});
+// male.length will tell us how many males are in the array
+return males.length
 };
 
-var femaleCount;
+
+/*
+I: function takes in array
+O: function returns the number of female customers
+C:
+E:
+*/
+
+var femaleCount = function(array){
+var females = _.filter(array, function(customer){
+return customer.gender === 'female'
+})
+
+return females.length
+}
 
 var oldestCustomer;
 
@@ -42,7 +62,29 @@ var youngestCustomer;
 
 var averageBalance;
 
-var firstLetterCount;
+
+/*
+I: function takes in an array and a letter
+O: returns a number
+   Find how many customers names begin with a given letter
+C: Could use filter
+   Should work with uppercase or lowercase
+E:
+*/
+
+var firstLetterCount = function (array, letter){
+// use filter on the array with callback function on customer
+var firstLetter = _.filter(array, function(customer){
+// return the customers name with letter in the first index - make lowercase
+// set equal to letter set to lowercase
+return customer.name[0].toLowerCase() === letter.toLowerCase()
+ 
+});
+// return the arrays length to get the number
+return firstLetter.length
+
+
+}
 
 var friendFirstLetterCount;
 
