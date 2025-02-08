@@ -86,7 +86,7 @@ return firstLetter.length
 }
 
 /*
-I: An array, a customer.friend string, and a letter
+I: An array, a customer, and a letter
 O: A number
    Find how many friends of a given customer have 
    names that start with a given letter
@@ -95,15 +95,19 @@ E:
 */
 
 var friendFirstLetterCount = function (array, customer, letter){
-var friendLetter = _.filter(array, customer, function(customer){
-return customer.friends.name[0].toLowerCase() === letter.toLowerCase()
-});
-
+// fiilter through customer friends
+var friendLetter = _.filter(customer.friends, function(friend){
+ // return friends names to lower case set to equal letter
+return friend.name[0].toLowerCase() === letter.toLowerCase()
+})
 return friendLetter.length
 }
 
 
-var friendsCount;
+
+var friendsCount = function (array, name){
+
+}
 
 var topThreeTags;
 
