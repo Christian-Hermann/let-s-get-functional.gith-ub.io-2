@@ -49,17 +49,56 @@ E:
 */
 
 var femaleCount = function(array){
-var females = _.filter(array, function(customer){
-return customer.gender === 'female'
-})
+const numFemales = _.reduce(array,function(acc, current){
+   // check if each gender element is equal to feamle
+ if(current.gender === "female"){
+   // if yes, increment acc count
+   acc++
+ }
+ // return acc
+ return acc
+}, 0)
 
-return females.length
+  return numFemales
 }
 
-var oldestCustomer;
+var oldestCustomer = function(array){
+   const oldest = _.reduce(array, function(acc, item){
+      // check to see if items age is greater than acc
+      // if not move on and keep checking
+if (item.age > acc.age){
+   return item
+} else {
+   return acc
+}
 
-var youngestCustomer;
+  // don't need a seed value. the first item will become the seed. The firset object will be the seed   
+   });
+   return oldest.name
+};
 
+/*
+I: takes in an array
+O: a string
+C: must use reduce
+E: NA
+*/
+
+
+var youngestCustomer = function(array){
+const youngest = _.reduce(array, function(acc, current){
+   // check if the current age is less than acc 
+   // if so retrun current item else return acc
+if(current.age < acc.age){
+   return current
+} else {
+   return acc
+}
+// do not need a seed value because we're checking against the first/current object
+});
+// return youngest
+return youngest.name
+}
 var averageBalance;
 
 
@@ -111,7 +150,7 @@ var friendsCount = function (array, name){
 
 var topThreeTags;
 
-var genderCount;
+var genderCount; // reduce -  this one is hard
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
