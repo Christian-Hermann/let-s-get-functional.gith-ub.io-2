@@ -94,12 +94,31 @@ if(current.age < acc.age){
 } else {
    return acc
 }
-// do not need a seed value because we're checking against the first/current object
+// do not need a seed value because we're checking against the first/current object again
 });
 // return youngest
 return youngest.name
 }
-var averageBalance;
+
+/*
+I: array
+O: number
+C: reduce
+E:
+*/
+
+
+var averageBalance = function(array){
+   const balance = _.reduce(array, function(acc, current){
+   return acc + current.balance
+
+   
+      
+   },0);
+   const averageBalance =  balance / array.length
+
+   return averageBalance
+};
 
 
 /*
