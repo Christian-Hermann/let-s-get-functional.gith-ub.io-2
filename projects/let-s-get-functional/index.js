@@ -153,11 +153,23 @@ E:
 */
 
 var friendFirstLetterCount = function (array, customer, letter){
-// fiilter through customer friends
-var friendLetter = _.filter(customer.friends, function(friend){
- // return friends names to lower case set to equal letter
+// use find to locate a specifc customer object
+var customerObj = array.find(function(item){
+   // use item.name to locate specific customer
+   return item.name === customer
+});
+  // if a customer object is not found return zero
+if (!customerObj){
+   return 0;
+}
+
+// fiilter through customer objects friends
+var friendLetter = _.filter(customerObj.friends, function(friend){
+ // return friends names first letter to lower case set to equal letter lowercaseed
 return friend.name[0].toLowerCase() === letter.toLowerCase()
-})
+});
+
+// retrun length of the array 
 return friendLetter.length
 }
 
