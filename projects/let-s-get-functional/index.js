@@ -173,6 +173,12 @@ return friend.name[0].toLowerCase() === letter.toLowerCase()
 return friendLetter.length
 }
 
+/*
+I: 
+O:
+C:
+E:
+*/
 
 
 var friendsCount = function (array, name){
