@@ -177,20 +177,24 @@ return friendLetter.length
 /*
 I: array, name
 O: array
-C: use filter
+C: 
 E:
 */
 
 var friendsCount = function (array, name){
-
+// filter through array of customers
 let countFriends = _.filter(array, function(customer){
+   // use some to check if any of the names we're looking for
    return _.some(customer.friends, function(friend){
+   // check to see if any of the friends names equal name given
       return friend.name === name;
 
 
    })
 })
 
+// use map to iterate over the filtered customers array
+// creates new array
 .map(function(customer){
    return customer.name
 })
