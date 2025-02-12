@@ -115,7 +115,8 @@ var averageBalance = function(array){
    
       
    },0);
-   const averageBalance =  balance / array.length
+
+   let averageBalance =  balance / array.length
 
    return averageBalance
 };
@@ -174,18 +175,51 @@ return friendLetter.length
 }
 
 /*
-I: 
-O:
+I: array, name
+O: array
+C: use filter
+E:
+*/
+
+var friendsCount = function (array, name){
+
+let countFriends = _.filter(array, function(customer){
+   return _.some(customer.friends, function(friend){
+      return friend.name === name;
+
+
+   })
+})
+
+.map(function(customer){
+   return customer.name
+})
+
+return countFriends;
+
+}
+
+/*
+I: takes in an array
+O: array
+   find the three most common tags among all customers
+   associated tags
 C:
 E:
 */
 
-
-var friendsCount = function (array, name){
-
-}
-
 var topThreeTags;
+
+/*
+I: takes in an array
+O: Object
+C: use reduce
+   create a summary of genders
+   male: 3,
+   female: 4,
+   non-binary: 1
+E:
+*/
 
 var genderCount; // reduce -  this one is hard
 
