@@ -109,16 +109,23 @@ E:
 
 
 var averageBalance = function(array){
-   const balance = _.reduce(array, function(acc, current){
-   return acc + current.balance
+
+
+   const totalBalance = _.reduce(array, function(acc, item){
+   
+   // use Number() to convert string to a number by taking out $ and , 
+   var balance = Number(item.balance.replace(/[\$,]/g, ''))   
+
+   return acc + balance
 
    
       
    },0);
 
-   let averageBalance =  balance / array.length
+   // calculate the balance 
+   let averagedBalance =  totalBalance / array.length
 
-   return averageBalance
+   return averagedBalance
 };
 
 
