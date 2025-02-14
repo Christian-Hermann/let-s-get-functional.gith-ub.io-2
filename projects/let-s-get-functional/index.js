@@ -2,6 +2,7 @@
 
 'use strict';
 
+const { isArray } = require('lodash');
 var customers = require('./data/customers.json');
 var _ = require('underbar');
 
@@ -193,7 +194,7 @@ var friendsCount = function (array, name){
 let countFriends = _.filter(array, function(customer){
    // use some to check if any of the names we're looking for
    return _.some(customer.friends, function(friend){
-   // check to see if any of the friends names equal name given
+   // check to see if any of the friends names equal name input
       return friend.name === name;
 
 
@@ -219,8 +220,17 @@ C:
 E:
 */
 
-var topThreeTags;
+var topThreeTags = function(array){
 
+// use reduce first then sort 
+   
+let threeTags = _.reduce (array, function(acc, customer){
+return acc += customer.tags  
+
+return acc
+
+}, []);
+}
 /*
 I: takes in an array
 O: Object
