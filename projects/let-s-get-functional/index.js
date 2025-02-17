@@ -192,8 +192,10 @@ E:
 var friendsCount = function (array, name){
 // filter through array of customers
 let countFriends = _.filter(array, function(customer){
+
    // use some to check if any of the names we're looking for
    return _.some(customer.friends, function(friend){
+
    // check to see if any of the friends names equal name input
       return friend.name === name;
 
@@ -225,12 +227,28 @@ var topThreeTags = function(array){
 // use reduce first then sort 
    
 let threeTags = _.reduce (array, function(acc, customer){
-return acc += customer.tags  
+acc = acc.concat(customer.tags)
 
 return acc
 
 }, []);
+
+
+let tagFrequency = _.reduce(threeTags, function(acc, current){
+  if(acc[current]){
+   acc[current]++
+  } else {
+   acc[current] = 1
+  }
+  return acc
+}, {})
+ console.log(tagFrequency)
+
 }
+
+
+
+
 /*
 I: takes in an array
 O: Object
@@ -242,7 +260,10 @@ C: use reduce
 E:
 */
 
-var genderCount; // reduce -  this one is hard
+var genderCount = function(array) {
+   l
+}
+   // reduce -  this one is hard
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
