@@ -225,18 +225,21 @@ E:
 var topThreeTags = function(array){
 
 // use reduce first then sort 
-   
+// iterate throuhg to find all o fhte tags
 let threeTags = _.reduce (array, function(acc, customer){
+// concat all of the tags into one array
 acc = acc.concat(customer.tags)
 
 return acc
 
 }, []);
 
-
+// use frequenct object to go through tags
 let tagFrequency = _.reduce(threeTags, function(acc, current){
+   // if tag is already found increment count by one
   if(acc[current]){
    acc[current]++
+   // else set equal to one
   } else {
    acc[current] = 1
   }
