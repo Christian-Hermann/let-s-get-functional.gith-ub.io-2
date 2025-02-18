@@ -243,10 +243,23 @@ let tagFrequency = _.reduce(threeTags, function(acc, current){
   } else {
    acc[current] = 1
   }
+  // return acc and object
   return acc
 }, {})
  console.log(tagFrequency)
 
+
+   // use object.keys to turn object into array 
+   // use sort to iterate - use a,b to compare
+ var sortTag = Object.keys(tagFrequency).sort(function(a, b){
+   // use b - a for descending order
+   return tagFrequency[b] - tagFrequency[a]
+
+   // use slice to get the top three tags
+ }).slice(0, 3)
+
+ return sortTag
+ 
 }
 
 
