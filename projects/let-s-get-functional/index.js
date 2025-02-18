@@ -277,8 +277,23 @@ E:
 */
 
 var genderCount = function(array) {
-   l
-}
+let genderCounter = _.reduce(array, function(acc, current){
+   // let gender = current iteration gender
+   let gender = current.gender
+   // check if acc has a key fot the speicfied gender
+   if(acc[gender]){
+      // if so, increment count
+      acc[gender]++
+      // if not set the counter to one
+     } else {
+      acc[gender] = 1
+     }
+     // after each iteration return acc to keep updating counts
+     return acc
+}, {})
+     // return the gender counter after the all of the values have been found
+    return genderCounter
+};
    // reduce -  this one is hard
 
 //////////////////////////////////////////////////////////////////////
